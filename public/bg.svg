@@ -1,0 +1,22 @@
+<svg width="1440" height="1190" viewBox="0 0 1440 1190" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<path d="M0 776.5C0 776.5 192 829 288 797.3C384 765 480 723 576 733.3C672 744 768 808 864 840C960 872 1056 872 1152 856C1248 840 1344 808 1392 792L1440 776V-6.5H1392C1344 -6.5 1342.5 -6.5 1246.5 -6.5C1150.5 -6.5 1008 -6.5 912 -6.5C816 -6.5 771 -6.5 675 -6.5C579 -6.5 541.5 -6.5 445.5 -6.5C349.5 -6.5 273.5 -6.5 225.5 -6.5H0V776.5Z" fill="#0099FF"/>
+<circle cx="50.5" cy="473.5" r="142.5" fill="white" fill-opacity="0.18"/>
+<circle cx="210.5" cy="456.5" r="52.5" fill="white" fill-opacity="0.18"/>
+<circle cx="775.5" cy="339.5" r="103.5" fill="white" fill-opacity="0.18"/>
+<circle cx="865.5" cy="319.5" r="72.5" fill="white" fill-opacity="0.18"/>
+<circle cx="0.5" cy="772.5" r="52.5" fill="white" fill-opacity="0.18"/>
+<circle cx="1031" cy="764" r="103" fill="white" fill-opacity="0.18"/>
+<circle cx="1182.5" cy="391.5" r="111.5" fill="white" fill-opacity="0.18"/>
+<circle cx="488.5" cy="152.5" r="108.5" fill="white" fill-opacity="0.18"/>
+<circle cx="276" cy="280" r="61" fill="white" fill-opacity="0.18"/>
+<circle cx="456.5" cy="719.5" r="103.5" fill="white" fill-opacity="0.18"/>
+<circle cx="1440.5" cy="772.5" r="52.5" fill="white" fill-opacity="0.18"/>
+<circle cx="1493.5" cy="473.5" r="142.5" fill="white" fill-opacity="0.18"/>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="1440" height="1190" fill="white"/>
+</clipPath>
+</defs>
+</svg>
