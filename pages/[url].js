@@ -1,8 +1,11 @@
+import axios from 'axios'
 import Head from 'next/head'
+import Link from 'next/link'
+import ReactHtmlParser from 'react-html-parser';
 import { useRouter } from 'next/router'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/blog.module.css'
 
-export default function Home() {
+export default function Home({blog}) {
   const router = useRouter()
   const { url } = router.query
   return (
@@ -13,8 +16,28 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1>{url}</h1>
+      <div className={styles.blog}>
+        <h1>{blog.title}</h1>
+        <img style={{width:'100%', maxHeight: '500px', objectFit: 'cover'}} src={blog.imgurl} alt='blog' />
+        <div style={{display:'flex', alignItems:'center', justifyContent:'center', margin:'20px 0'}}>
+          <img style={{width:'80px', borderRadius:'50%', margin:'0px 20px'}} src={blog.author.imgurl} alt="userimg"/>
+          <div>
+            <Link href={'/@'+blog.username} target='blank'>{blog.author.displayName}</Link><br/>
+            <code>Published at {new Date(blog.createdAt).toLocaleTimeString(undefined, { year: "numeric", month: "long", day: "numeric" })}</code>
+          </div>
+        </div>
+        <div className={styles.ck_content}>{ReactHtmlParser(blog.body)}</div>
+        <Link href={'/'}><button>Read More.........</button></Link>
+      </div>
 
     </div>
   )
+}
+
+export async function getServerSideProps({params}){
+  const req = await axios.get(`/blog/${params.url}`)
+  const data =req.data
+  return{
+    props:{blog : data}
+  }
 }
