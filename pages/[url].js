@@ -2,12 +2,9 @@ import axios from 'axios'
 import Head from 'next/head'
 import Link from 'next/link'
 import ReactHtmlParser from 'react-html-parser';
-import { useRouter } from 'next/router'
 import styles from '../styles/blog.module.css'
 
 export default function Home({blog}) {
-  const router = useRouter()
-  const { url } = router.query
   return (
     <div className={styles.container}>
       <Head>
@@ -34,9 +31,22 @@ export default function Home({blog}) {
   )
 }
 
+
 export async function getServerSideProps({params}){
-  const req = await axios.get(`/blog/${params.url}`)
-  const data =req.data
+  try {
+    const res = await fetch(`https://api.vdev.in/blog/${params.url}`)
+    var data = await res.json()
+  } catch (error) {
+    console.log(error)
+  }
+  if (!data) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    }
+  }
   return{
     props:{blog : data}
   }

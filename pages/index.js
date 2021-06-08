@@ -39,8 +39,12 @@ export default function Home({blog}) {
 }
 
 export async function getServerSideProps({params}){
-  const req = await axios.get(`/blog`)
-  const data =req.data
+  try {
+    const res = await fetch(`https://api.vdev.in/blog`)
+    var data = await res.json()
+  } catch (error) {
+    console.log(error)
+  }
   return{
     props:{blog : data}
   }
